@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Apps</title>
+        <style>
+            table {
+                margin-top: 17vh;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+            table, th, td {
+                border: 1px solid;
+                padding: 12px;
+                border-collapse: collapse;
+            }
+
+            th {
+                background-color: #E5E5E5;
+            }
+
+            body, button{
+                font-family: 'Lexend', sans-serif;
+            }
+
+            button {
+                cursor: pointer;
+                border: 0px;
+                padding: 15px 30px 15px 30px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Amount</th>
+                <th>Customer Name</th>
+                <th>Status</th>
+                <th>Transaction Date</th>
+                <th>Create By</th>
+                <th>Create On</th>
+            </tr>
+            <tbody id="myTable">
+
+            </tbody>
+        </table>
+
+        <script>
+            var data = [
+                {
+                    "id": 1372,
+                    "productID": "10001",
+                    "productName": "Test 1",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-07-10 11:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 11:14:52"
+                },
+                {
+                    "id": 1373,
+                    "productID": "10002",
+                    "productName": "Test 2",
+                    "amount": "2000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-07-11 13:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 13:14:52"
+                },
+                {
+                    "id": 1374,
+                    "productID": "10001",
+                    "productName": "Test 1",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-08-10 12:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 12:14:52"
+                },
+                {
+                    "id": 1375,
+                    "productID": "10002",
+                    "productName": "Test 2",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 1,
+                    "transactionDate": "2022-08-10 13:10:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 13:10:52"
+                },
+                {
+                    "id": 1376,
+                    "productID": "10001",
+                    "productName": "Test 1",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-08-10 13:11:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 13:11:52"
+                },
+                {
+                    "id": 1377,
+                    "productID": "10002",
+                    "productName": "Test 2",
+                    "amount": "2000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-08-12 13:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 13:14:52"
+                },
+                {
+                    "id": 1378,
+                    "productID": "10001",
+                    "productName": "Test 1",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-08-12 14:11:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 14:11:52"
+                },
+                {
+                    "id": 1379,
+                    "productID": "10002",
+                    "productName": "Test 2",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 1,
+                    "transactionDate": "2022-09-13 11:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 11:14:52"
+                },
+                {
+                    "id": 1380,
+                    "productID": "10001",
+                    "productName": "Test 1",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-09-13 13:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 13:14:52"
+                },
+                {
+                    "id": 1381,
+                    "productID": "10002",
+                    "productName": "Test 2",
+                    "amount": "2000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-09-14 09:11:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 09:11:52"
+                },
+                {
+                    "id": 1382,
+                    "productID": "10001",
+                    "productName": "Test 1",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 0,
+                    "transactionDate": "2022-09-14 10:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 10:14:52"
+                },
+                {
+                    "id": 1383,
+                    "productID": "10002",
+                    "productName": "Test 2",
+                    "amount": "1000",
+                    "customerName" : "abc",
+                    "status": 1,
+                    "transactionDate": "2022-08-15 13:14:52",
+                    "createBy" : "abc",
+                    "createOn" : "2022-07-10 13:14:52"
+                }
+            ]
+
+            buildTable(data)
+
+            function buildTable(data){
+                var table = document.getElementById('myTable')
+
+                for (var i = 0; i < data.length; i++){
+                    var row = `<tr>
+                                    <td contenteditable>${data[i].id}</td>
+                                    <td contenteditable>${data[i].productID}</td>
+                                    <td contenteditable>${data[i].productName}</td>
+                                    <td contenteditable>${data[i].amount}</td>
+                                    <td contenteditable>${data[i].customerName}</td>
+                                    <td contenteditable>${data[i].status}</td>
+                                    <td contenteditable>${data[i].transactionDate}</td>
+                                    <td contenteditable>${data[i].createBy}</td>
+                                    <td contenteditable>${data[i].createOn}</td>
+                                </tr>`
+                    table.innerHTML += row
+                }
+            }
+        </script>
+
+        <div style="width: auto; text-align: center; margin-top: 20px; margin-bottom: 20px">
+            <button onclick="myCreateFunction()">Create row</button>
+            <button onclick="myDeleteFunction()">Delete row</button>
+        </div>
+        <script>
+            function myCreateFunction() {
+                var table = document.getElementById('myTable')
+                var row = `<tr>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                    <td contenteditable></td>
+                                </tr>`
+                table.innerHTML += row
+            }
+
+            function myDeleteFunction() {
+                document.getElementById("myTable").deleteRow(-1);
+            }
+        </script>
+    </body>
+</html>
